@@ -19,7 +19,7 @@ export function WhyUs() {
           {items.map((it, i) => (
             <Reveal key={it.title} delay={i * 0.05} className={i === 0 ? "lg:row-span-1" : ""}>
               <div className="h-full rounded-3xl bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-lift">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-teal-500/15 text-teal-600"><it.icon className="h-6 w-6" aria-hidden="true" /></span>
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-accent-500/15 text-accent-600"><it.icon className="h-6 w-6" aria-hidden="true" /></span>
                 <h3 className="mt-5 text-lg font-bold text-navy-900">{it.title}</h3>
                 <p className="mt-2 leading-relaxed text-ink/75">{it.text}</p>
               </div>

@@ -5,19 +5,19 @@
  */
 export const site = {
   name: "Martínez Seguros",
-  tagline: "Asesoramiento y comercialización de seguros en Uruguay",
+  tagline: "Corredores de seguros: asesoramiento y comercialización en Uruguay",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   locale: "es_UY",
   gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
 
   contact: {
-    /** Datos tomados de una ficha comercial: pendientes de validación. */
+    /** Tomados del Instagram oficial (bio y publicaciones). Confirmar con el cliente. */
     pending: true,
-    phoneDisplay: "098 808 293",
+    phoneDisplay: "099 419 210",
     /** Formato internacional sin "+" ni espacios (Uruguay = 598, sin el 0 inicial). */
-    whatsappNumber: "59898808293",
-    phoneHref: "tel:+59898808293",
-    email: "info.martinezseguros@gmail.com",
+    whatsappNumber: "59899419210",
+    phoneHref: "tel:+59899419210",
+    email: "shmartinez66@hotmail.com",
     instagramUser: "martinezseguros",
     instagramUrl: "https://instagram.com/martinezseguros",
     address: {

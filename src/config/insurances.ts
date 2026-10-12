@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Bike, Car, HeartPulse, House, KeyRound, Plane, ShieldPlus, Store } from "lucide-react";
+import { Bike, Car, HardHat, HeartPulse, House, KeyRound, Plane, ShieldPlus, Store } from "lucide-react";
 
 export type FieldDef = {
   name: string;
@@ -135,17 +135,32 @@ export const insurances: InsuranceType[] = [
   },
   {
     slug: "alquiler",
-    name: "Seguro de alquiler",
-    short: "Alternativas para inquilinos y propietarios que buscan mayor respaldo.",
+    name: "Garantía de alquiler",
+    short: "Alternativas de garantía para alquilar con mayor tranquilidad, como inquilino o propietario.",
     intro: "Te contamos qué alternativas existen para alquilar o dar en alquiler con mayor tranquilidad, y qué condiciones suelen pedirse.",
     covers: ["Opciones para inquilinos", "Opciones para propietarios", "Orientación sobre requisitos"],
     icon: KeyRound,
-    whatsappMessage: "Hola, quiero consultar por un seguro de alquiler.",
-    seoTitle: "Seguro de alquiler en Uruguay",
-    seoDescription: "Asesoramiento sobre seguros de alquiler en Uruguay para inquilinos y propietarios.",
+    whatsappMessage: "Hola, quiero consultar por una garantía de alquiler.",
+    seoTitle: "Garantía de alquiler en Uruguay",
+    seoDescription: "Asesoramiento sobre garantía de alquiler en Uruguay para inquilinos y propietarios.",
     fields: [
       { name: "rol", label: "Soy", type: "select", required: true, options: ["Inquilino/a", "Propietario/a", "Inmobiliaria"] },
       localidad,
+    ],
+  },
+  {
+    slug: "accidentes-de-trabajo",
+    name: "Accidentes de trabajo",
+    short: "Cobertura para proteger a tu equipo y cumplir con tus obligaciones como empleador.",
+    intro: "Si tenés personal a cargo, conviene entender qué cobertura corresponde a tu actividad. Te orientamos para que elijas con información clara.",
+    covers: ["Orientación según tu actividad", "Alternativas para empresas y empleadores", "Acompañamiento ante un siniestro"],
+    icon: HardHat,
+    whatsappMessage: "Hola, quiero recibir asesoramiento sobre seguro de accidentes de trabajo.",
+    seoTitle: "Seguro de accidentes de trabajo en Uruguay",
+    seoDescription: "Asesoramiento sobre seguro de accidentes de trabajo en Uruguay para empresas y empleadores.",
+    fields: [
+      { name: "rubro", label: "Rubro o actividad", type: "text", required: true, placeholder: "Ej. Construcción, comercio" },
+      { name: "personal", label: "Cantidad de personas a cargo", type: "number", required: true, min: 1, placeholder: "Ej. 5" },
     ],
   },
   {

@@ -19,7 +19,7 @@ export function Footer() {
           <h2 className="text-sm font-bold uppercase tracking-wider text-white">Seguros</h2>
           <ul className="mt-4 space-y-2 text-sm">
             {insurances.map((i) => (
-              <li key={i.slug}><Link href={`/seguros/${i.slug}`} className="hover:text-teal-300">{i.name}</Link></li>
+              <li key={i.slug}><Link href={`/seguros/${i.slug}`} className="hover:text-accent-300">{i.name}</Link></li>
             ))}
           </ul>
         </nav>
@@ -27,9 +27,9 @@ export function Footer() {
           <h2 className="text-sm font-bold uppercase tracking-wider text-white">La web</h2>
           <ul className="mt-4 space-y-2 text-sm">
             {navLinks.map((l) => (
-              <li key={l.href}><Link href={l.href} className="hover:text-teal-300">{l.label}</Link></li>
+              <li key={l.href}><Link href={l.href} className="hover:text-accent-300">{l.label}</Link></li>
             ))}
-            <li><Link href="/privacidad" className="hover:text-teal-300">Privacidad</Link></li>
+            <li><Link href="/privacidad" className="hover:text-accent-300">Privacidad</Link></li>
           </ul>
           <p className="mt-5 text-sm">{fullAddress}</p>
         </nav>

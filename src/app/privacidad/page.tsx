@@ -12,7 +12,7 @@ export default function Privacidad() {
         <section><h2>Qué datos recopilamos</h2><p>Solo los que ingresás en el formulario: nombre, teléfono, correo electrónico (opcional) y los datos del seguro que consultás. No solicitamos documentos de identidad, datos bancarios ni contraseñas.</p></section>
         <section><h2>Para qué los usamos</h2><p>Para contactarte y brindarte asesoramiento sobre seguros. En esta versión, el formulario no se guarda en ningún servidor: arma un mensaje de WhatsApp que vos decidís enviar.</p></section>
         <section><h2>Cookies de medición</h2><p>Si se configura Google Analytics, solo se activará después de que aceptes las cookies de medición. Podés rechazarlas y seguir usando la web normalmente.</p></section>
-        <section><h2>Tus derechos</h2><p>Podés solicitar acceso, rectificación o eliminación de tus datos escribiendo a <a className="font-semibold text-teal-600 underline" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p></section>
+        <section><h2>Tus derechos</h2><p>Podés solicitar acceso, rectificación o eliminación de tus datos escribiendo a <a className="font-semibold text-accent-600 underline" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p></section>
       </div>
     </article>
   );

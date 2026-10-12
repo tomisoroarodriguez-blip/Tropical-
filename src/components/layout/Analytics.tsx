@@ -36,10 +36,10 @@ export function Analytics() {
         <div role="dialog" aria-label="Preferencias de cookies" className="fixed inset-x-3 bottom-24 z-50 mx-auto max-w-xl rounded-2xl bg-navy-900 p-5 text-white shadow-lift sm:bottom-6 sm:left-6 sm:right-auto">
           <p className="text-sm leading-relaxed text-navy-100">
             Usamos cookies de medición para entender cómo se usa la web y mejorarla. Solo se activan si las aceptás.{" "}
-            <Link href="/privacidad" className="font-semibold text-teal-300 underline underline-offset-2">Más información</Link>
+            <Link href="/privacidad" className="font-semibold text-accent-300 underline underline-offset-2">Más información</Link>
           </p>
           <div className="mt-4 flex gap-3">
-            <button type="button" onClick={() => setConsent("granted")} className="min-h-11 flex-1 rounded-full bg-teal-500 px-4 font-semibold text-navy-950 hover:bg-teal-400">Aceptar</button>
+            <button type="button" onClick={() => setConsent("granted")} className="min-h-11 flex-1 rounded-full bg-accent-500 px-4 font-semibold text-navy-950 hover:bg-accent-400">Aceptar</button>
             <button type="button" onClick={() => setConsent("denied")} className="min-h-11 flex-1 rounded-full border border-white/30 px-4 font-semibold hover:bg-white/10">Rechazar</button>
           </div>
         </div>

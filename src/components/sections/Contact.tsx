@@ -21,8 +21,8 @@ export function Contact() {
           <ul className="grid gap-4 sm:grid-cols-2">
             {rows.map((r) => (
               <li key={r.label}>
-                <a href={r.href} {...(r.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="group flex h-full items-start gap-4 rounded-2xl border border-navy-900/10 p-5 transition hover:-translate-y-1 hover:border-teal-500/50 hover:shadow-lift">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-navy-900 text-teal-300 transition group-hover:bg-teal-500 group-hover:text-navy-950"><r.icon className="h-6 w-6" aria-hidden="true" /></span>
+                <a href={r.href} {...(r.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="group flex h-full items-start gap-4 rounded-2xl border border-navy-900/10 p-5 transition hover:-translate-y-1 hover:border-accent-500/50 hover:shadow-lift">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-navy-900 text-accent-300 transition group-hover:bg-accent-500 group-hover:text-navy-950"><r.icon className="h-6 w-6" aria-hidden="true" /></span>
                   <span className="min-w-0">
                     <span className="block text-sm font-semibold text-ink/60">{r.label}</span>
                     <span className="block break-words font-bold text-navy-900">{r.value}</span>
@@ -32,7 +32,7 @@ export function Contact() {
             ))}
             <li className="sm:col-span-2">
               <div className="flex items-start gap-4 rounded-2xl border border-navy-900/10 p-5">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-navy-900 text-teal-300"><Clock className="h-6 w-6" aria-hidden="true" /></span>
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-navy-900 text-accent-300"><Clock className="h-6 w-6" aria-hidden="true" /></span>
                 <div>
                   <p className="text-sm font-semibold text-ink/60">Horarios de atención</p>
                   {site.hours.length ? (

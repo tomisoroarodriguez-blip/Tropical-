@@ -8,7 +8,7 @@ export const organizationLd = {
   name: site.name,
   description: site.tagline,
   url: site.url,
-  telephone: "+59898808293",
+  telephone: "+59899419210",
   email: site.contact.email,
   sameAs: [site.contact.instagramUrl],
   address: {

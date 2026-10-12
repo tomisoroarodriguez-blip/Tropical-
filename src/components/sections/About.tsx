@@ -22,7 +22,7 @@ export function About() {
         <ul className="grid gap-4">
           {values.map((v) => (
             <li key={v.title} className="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-card">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-navy-900 text-teal-300"><v.icon className="h-6 w-6" aria-hidden="true" /></span>
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-navy-900 text-accent-300"><v.icon className="h-6 w-6" aria-hidden="true" /></span>
               <div>
                 <h3 className="font-bold text-navy-900">{v.title}</h3>
                 <p className="text-ink/75">{v.text}</p>

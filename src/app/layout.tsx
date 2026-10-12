@@ -8,7 +8,7 @@ import { QuoteProvider } from "@/components/layout/QuoteContext";
 import { organizationLd, jsonLdString } from "@/lib/jsonld";
 import { site } from "@/config/site";
 
-export const viewport: Viewport = { themeColor: "#0b1f3a", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#162e57", width: "device-width", initialScale: 1 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

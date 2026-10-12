@@ -15,7 +15,7 @@ export function FAQ() {
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
-              <div key={f.q} className={`rounded-2xl border transition ${isOpen ? "border-teal-500/50 bg-mist shadow-card" : "border-navy-900/10 bg-white"}`}>
+              <div key={f.q} className={`rounded-2xl border transition ${isOpen ? "border-accent-500/50 bg-mist shadow-card" : "border-navy-900/10 bg-white"}`}>
                 <h3>
                   <button
                     type="button"
@@ -26,7 +26,7 @@ export function FAQ() {
                     className="flex min-h-14 w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-bold text-navy-900 sm:text-lg"
                   >
                     {f.q}
-                    <ChevronDown className={`h-5 w-5 shrink-0 text-teal-600 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" />
+                    <ChevronDown className={`h-5 w-5 shrink-0 text-accent-600 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" />
                   </button>
                 </h3>
                 <div id={`faq-panel-${i}`} role="region" aria-labelledby={`faq-btn-${i}`} className={`grid transition-[grid-template-rows] duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>

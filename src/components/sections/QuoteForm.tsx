@@ -12,7 +12,7 @@ import { validateContact, validateField, type Errors } from "@/lib/validation";
 import { buildQuoteMessage, whatsappUrl } from "@/lib/whatsapp";
 
 const inputCls =
-  "mt-1.5 block scroll-mt-28 min-h-12 w-full rounded-xl border bg-white px-4 text-base text-ink placeholder:text-ink/40 transition focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/20 aria-[invalid=true]:border-red-600";
+  "mt-1.5 block scroll-mt-28 min-h-12 w-full rounded-xl border bg-white px-4 text-base text-ink placeholder:text-ink/40 transition focus:border-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-500/20 aria-[invalid=true]:border-red-600";
 
 export function QuoteForm({ initialType = "" }: { initialType?: string }) {
   const { selected } = useQuote();
@@ -133,11 +133,11 @@ export function QuoteForm({ initialType = "" }: { initialType?: string }) {
             onChange={(e) => { setPrivacy(e.target.checked); setErrors((x) => ({ ...x, privacy: "" })); }}
             aria-invalid={!!errors.privacy}
             aria-describedby={errors.privacy ? "err-privacy" : undefined}
-            className="mt-0.5 h-5 w-5 shrink-0 accent-teal-600"
+            className="mt-0.5 h-5 w-5 shrink-0 accent-accent-600"
           />
           <span>
             Acepto que Martínez Seguros use estos datos para contactarme y asesorarme, según el{" "}
-            <Link href="/privacidad" className="font-semibold text-teal-600 underline underline-offset-2">aviso de privacidad</Link>.
+            <Link href="/privacidad" className="font-semibold text-accent-600 underline underline-offset-2">aviso de privacidad</Link>.
           </span>
         </label>
         {errors.privacy && <p id="err-privacy" className="mt-2 text-sm font-medium text-red-700">{errors.privacy}</p>}

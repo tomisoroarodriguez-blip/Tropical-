@@ -19,12 +19,12 @@ export function Claims() {
           {cases.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.08}>
               <article className="h-full rounded-3xl bg-white p-7 shadow-card">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-navy-900 text-teal-300"><c.icon className="h-6 w-6" aria-hidden="true" /></span>
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-navy-900 text-accent-300"><c.icon className="h-6 w-6" aria-hidden="true" /></span>
                 <h3 className="mt-5 text-xl font-bold text-navy-900">{c.title}</h3>
                 <ol className="mt-4 space-y-3">
                   {c.steps.map((s, n) => (
                     <li key={s} className="flex gap-3 leading-relaxed text-ink/80">
-                      <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-teal-500/15 text-xs font-extrabold text-teal-600">{n + 1}</span>
+                      <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-500/15 text-xs font-extrabold text-accent-600">{n + 1}</span>
                       {s}
                     </li>
                   ))}
@@ -36,7 +36,7 @@ export function Claims() {
 
         <div className="mt-6 grid gap-5 lg:grid-cols-[1.4fr_1fr]">
           <div className="rounded-3xl bg-white p-7 shadow-card">
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-navy-900 text-teal-300"><PhoneCall className="h-6 w-6" aria-hidden="true" /></span>
+            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-navy-900 text-accent-300"><PhoneCall className="h-6 w-6" aria-hidden="true" /></span>
             <h3 className="mt-5 text-xl font-bold text-navy-900">Cómo contactar a la aseguradora</h3>
             <p className="mt-3 leading-relaxed text-ink/80">
               Los canales de denuncia de siniestros (teléfono, aplicación o sitio web) figuran en tu póliza y en la documentación que te entregó la aseguradora. Buscalos ahí: son los oficiales para tu cobertura. Si no los encontrás, pedinos ayuda.
@@ -51,8 +51,8 @@ export function Claims() {
           </div>
         </div>
 
-        <p className="mt-6 flex items-start gap-3 rounded-2xl border border-teal-500/30 bg-teal-500/10 p-4 text-sm leading-relaxed text-navy-900">
-          <Info className="mt-0.5 h-5 w-5 shrink-0 text-teal-600" aria-hidden="true" />
+        <p className="mt-6 flex items-start gap-3 rounded-2xl border border-accent-500/30 bg-accent-500/10 p-4 text-sm leading-relaxed text-navy-900">
+          <Info className="mt-0.5 h-5 w-5 shrink-0 text-accent-600" aria-hidden="true" />
           <span>Esta información es general. Los procedimientos, plazos y documentación específicos dependen de la compañía aseguradora y de la póliza contratada. Ante una emergencia, comunicate con los servicios de emergencia locales.</span>
         </p>
       </div>

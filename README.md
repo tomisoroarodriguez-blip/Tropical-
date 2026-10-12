@@ -19,7 +19,7 @@ Requiere Node 20+. Copiá `.env.example` a `.env.local` si querés definir `NEXT
 | Tipos de seguro, textos, campos del formulario, mensajes de WhatsApp | `src/config/insurances.ts` |
 | Preguntas frecuentes | `src/config/faqs.ts` |
 | Colores de marca | `src/app/globals.css` (bloque `@theme`) |
-| Logo provisional | `src/components/layout/Logo.tsx` |
+| Logo (recreado a partir del Instagram; reemplazar por el archivo original) | `src/components/layout/Logo.tsx` |
 | Aviso de privacidad (borrador) | `src/app/privacidad/page.tsx` |
 
 Los contenidos están separados de los componentes a propósito: cuando se agregue un panel administrativo, esos archivos pasan a leerse de una base de datos sin tocar la UI.
@@ -28,4 +28,4 @@ Los contenidos están separados de los componentes a propósito: cuando se agreg
 No se carga nada por defecto. Con `NEXT_PUBLIC_GA_ID` definido, aparece un banner de consentimiento y Google Analytics solo se activa si la persona acepta. Los clics en WhatsApp (`whatsapp_click`) y envíos del formulario (`quote_submit`) se miden únicamente con consentimiento.
 
 ## Pendiente de confirmar con el cliente
-Teléfono/correo/dirección (ficha comercial), horarios, logo y colores reales, fotografías autorizadas, texto institucional, qué seguros ofrece realmente, y revisión legal del aviso de privacidad.
+Teléfono y correo (tomados del Instagram; la ficha comercial traía otros), dirección (ficha comercial), horarios, logo y colores reales, fotografías autorizadas, texto institucional, qué seguros ofrece realmente, y revisión legal del aviso de privacidad.
