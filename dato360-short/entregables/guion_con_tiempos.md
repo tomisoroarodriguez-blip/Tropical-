@@ -8,4 +8,4 @@ Tiempos tomados de la voz real (`assets/voz_palabras.json`). Para cambiar algo e
 | 6.0–12.7 | Del 27 al 30 de noviembre, sacale una foto a un insecto o a un ave silvestre y subila a iNaturalist con la fecha y el lugar. |
 | 13.4–17.1 | ¿No sabés qué especie es? La comunidad te puede ayudar. |
 | 17.9–21.6 | Buscá “GBS 2026 Montevideo” y sumate. |
-| 22.5–26.0 | Cierre: «Dato360» (provisional) |
+| 22.5–26.0 | Cierre: logo Dato360 (tomado de tu galería de Higgsfield) |

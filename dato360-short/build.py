@@ -161,13 +161,13 @@ def end_card():
     qy = Image.open(os.path.join(TMP, "question.png")); c.alpha_composite(qy, (0, -70))
     logo = os.path.join(HERE, "assets", "logo_dato360.png")
     if os.path.exists(logo):
-        lg = Image.open(logo).convert("RGBA"); lg.thumbnail((760, 300)); c.alpha_composite(lg, ((W - lg.width) // 2, 1120))
+        lg = Image.open(logo).convert("RGBA"); lg = lg.resize((430, 430), Image.LANCZOS); c.alpha_composite(shadowed(lg, 14, .5), ((W - 430) // 2, 1030))
     else:
         f = F("Black", 190); a, b = "Dato", "360"; wa, wb = d.textlength(a, font=f), d.textlength(b, font=f)
         x = (W - wa - wb) / 2; d.text((x, 1110), a, font=f, fill=WHITE); d.text((x + wa, 1110), b, font=f, fill=AMBER)
     ft = F("SemiBold", 26)
     for k, t in enumerate(["Fotos: Mike Dickison, Joselin Listur, Julia Elissalde y Milagros Valverde", "vía iNaturalist · CC BY / CC0 · Detalle de licencias en la descripción"]):
-        center_text(d, 1470 + k * 36, t, ft, (255, 255, 255, 200))
+        center_text(d, 1490 + k * 34, t, ft, (255, 255, 255, 200))
     return save(c, "endcard.png")
 
 SUB_FONT = F("ExtraBold", 68)
