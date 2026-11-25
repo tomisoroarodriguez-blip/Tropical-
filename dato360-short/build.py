@@ -15,26 +15,28 @@ OUT = os.path.join(HERE, "entregables")
 TMP = os.path.join(HERE, ".build")
 os.makedirs(OUT, exist_ok=True); shutil.rmtree(TMP, ignore_errors=True); os.makedirs(TMP)
 
-W, H, FPS, TOTAL = 1080, 1920, 30, 28.0
+W, H, FPS, TOTAL = 1080, 1920, 30, 26.0
 FONT = "/usr/share/fonts/opentype/inter/Inter-%s.otf"
 def F(w, s): return ImageFont.truetype(FONT % w, s)
 AMBER, WHITE, TEAL = (255, 201, 60), (255, 255, 255), (8, 34, 31)
 
 # ---------------- tiempos (segundos) ----------------
 # Cada cue = (inicio, fin, texto). Ritmo estimado de locución rioplatense (~2,8 palabras/s).
-CUES = [
-    (0.4, 1.6, "¿Sabías que una foto"), (1.6, 3.0, "de un bicho puede ayudar"),
-    (3.0, 4.6, "a conocer la biodiversidad"), (4.6, 6.3, "de Montevideo, Uruguay?"),
-    (6.8, 9.0, "Del 27 al 30 de noviembre,"), (9.0, 10.3, "sacale una foto"),
-    (10.3, 12.9, "a un insecto o a un ave silvestre"), (12.9, 14.4, "y subila a iNaturalist"),
-    (14.4, 16.0, "con la fecha y el lugar."),
-    (16.5, 18.2, "¿No sabés qué especie es?"), (18.3, 20.2, "La comunidad te puede ayudar."),
-    (20.7, 22.4, "Buscá “GBS 2026 Montevideo”"), (22.4, 23.3, "y sumate."),
+CUES = [  # tiempos reales de la voz es-UY-MateoNeural (assets/voz_palabras.json) + 0,4 s de arranque
+    (0.5, 1.55, "¿Sabías que una foto"), (1.58, 2.6, "de un bicho puede ayudar"),
+    (2.63, 3.8, "a conocer la biodiversidad"), (3.83, 5.3, "de Montevideo, Uruguay?"),
+    (6.0, 7.95, "Del 27 al 30 de noviembre,"), (8.02, 8.85, "sacale una foto"),
+    (8.89, 10.45, "a un insecto o a un ave silvestre"), (10.46, 11.55, "y subila a iNaturalist"),
+    (11.58, 12.7, "con la fecha y el lugar."),
+    (13.4, 14.8, "¿No sabés qué especie es?"), (15.59, 17.1, "La comunidad te puede ayudar."),
+    (17.92, 20.9, "Buscá “GBS 2026 Montevideo”"), (20.95, 21.6, "y sumate."),
 ]
-B = [0.0, 6.8, 16.5, 20.5]                 # inicio de cada escena
-END_CARD = 25.0                            # entra el cierre con logo
+B = [0.0, 5.8, 13.2, 17.6]                 # inicio de cada escena
+END_CARD = 22.5
+COMM_AT, SEARCH_AT, Q_AT = 15.55, 17.9, 20.9
+VOICE = os.path.join(HERE, 'assets', 'voz_es-UY-MateoNeural.mp3'); VOICE_DELAY_MS = 400                            # entra el cierre con logo
 XF = 0.3                                   # crossfade entre escenas
-STEPS_AT = [9.0, 12.2, 14.0]               # aparición de los 3 pasos
+STEPS_AT = [8.0, 9.8, 10.9]               # aparición de los 3 pasos
 SCENES = [  # foto, centro x del recorte (0-1), oscurecer, blur, crédito
     ("191380813.jpg", 0.47, 0.88, 0, "Foto: Mike Dickison · CC BY · iNaturalist"),
     ("40865772.jpg", 0.45, 0.64, 2.0, "Foto: Joselin Listur · CC BY · iNaturalist"),
@@ -220,9 +222,9 @@ def render(subs, outname):
     for k, (name, ic) in enumerate([("Sacá la foto", ic_camera), ("Agregá fecha y lugar", ic_calpin), ("Subila a iNaturalist", ic_upload)]):
         a = STEPS_AT[k]; g.overlay(step_card(k + 1, name, ic), a, B[2], 0.3, 0.25, x="90", y="%d+50*max(0,1-(t-%s)/0.3)" % (560 + k * 210, a))
     g.overlay(text_block("q1.png", ["¿No sabés qué", "especie es?"], 92, 560), B[2] + 0.1, END_CARD if False else B[3], 0.3, 0.25)
-    g.overlay(community_card(), 18.3, B[3], 0.3, 0.25, x="90", y="880+40*max(0,1-(t-18.3)/0.3)")
-    g.overlay(search_pill(), 20.7, END_CARD, 0.3, 0, x="90", y="520+40*max(0,1-(t-20.7)/0.3)")
-    question(); g.overlay(os.path.join(TMP, "question.png"), 22.4, END_CARD, 0.3, 0, y="-70+30*max(0,1-(t-22.4)/0.3)")
+    g.overlay(community_card(), COMM_AT, B[3], 0.3, 0.25, x="90", y=f"880+40*max(0,1-(t-{COMM_AT})/0.3)")
+    g.overlay(search_pill(), SEARCH_AT, END_CARD, 0.3, 0, x="90", y=f"520+40*max(0,1-(t-{SEARCH_AT})/0.3)")
+    question(); g.overlay(os.path.join(TMP, "question.png"), Q_AT, END_CARD, 0.3, 0, y=f"-70+30*max(0,1-(t-{Q_AT})/0.3)")
     g.overlay(end_card(), END_CARD, TOTAL, 0.5, 0)
     g.overlay(tag_overlay(), END_CARD, TOTAL)       # la etiqueta queda por encima del cierre
     if subs:
@@ -230,8 +232,8 @@ def render(subs, outname):
             p, h = sub_png(i, t); g.overlay(p, a, b, 0, 0, y=str(1445 - h))
     fc = os.path.join(TMP, "graph.txt"); open(fc, "w").write(";\n".join(g.chains))
     a = g.n; out = os.path.join(OUT, outname)
-    cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error"] + g.inputs + ["-f", "lavfi", "-t", str(TOTAL), "-i", "anullsrc=r=48000:cl=stereo",
-           "-filter_complex_script", fc, "-map", f"[{g.last}]", "-map", f"{a}:a", "-t", str(TOTAL), "-r", str(FPS),
+    cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error"] + g.inputs + (["-i", VOICE] if os.path.exists(VOICE) else ["-f", "lavfi", "-t", str(TOTAL), "-i", "anullsrc=r=48000:cl=stereo"]) + [
+           "-filter_complex_script", fc, "-map", f"[{g.last}]", "-map", f"{a}:a", "-af", (f"adelay={VOICE_DELAY_MS}|{VOICE_DELAY_MS},loudnorm=I=-14:TP=-1.5:LRA=7,apad" if os.path.exists(VOICE) else "anull"), "-t", str(TOTAL), "-r", str(FPS),
            "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p", "-profile:v", "high", "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709",
            "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out]
     subprocess.run(cmd, check=True); print("OK", out)
