@@ -1,0 +1,52 @@
+1
+00:00:00,400 --> 00:00:01,600
+¿Sabías que una foto
+
+2
+00:00:01,600 --> 00:00:03,000
+de un bicho puede ayudar
+
+3
+00:00:03,000 --> 00:00:04,600
+a conocer la biodiversidad
+
+4
+00:00:04,600 --> 00:00:06,300
+de Montevideo, Uruguay?
+
+5
+00:00:06,800 --> 00:00:09,000
+Del 27 al 30 de noviembre,
+
+6
+00:00:09,000 --> 00:00:10,300
+sacale una foto
+
+7
+00:00:10,300 --> 00:00:12,900
+a un insecto o a un ave silvestre
+
+8
+00:00:12,900 --> 00:00:14,400
+y subila a iNaturalist
+
+9
+00:00:14,400 --> 00:00:16,000
+con la fecha y el lugar.
+
+10
+00:00:16,500 --> 00:00:18,200
+¿No sabés qué especie es?
+
+11
+00:00:18,300 --> 00:00:20,200
+La comunidad te puede ayudar.
+
+12
+00:00:20,700 --> 00:00:22,400
+Buscá “GBS 2026 Montevideo”
+
+13
+00:00:22,400 --> 00:00:23,300
+y sumate.
+
